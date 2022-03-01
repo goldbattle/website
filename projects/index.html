@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <script type="text/javascript">
+  if (window.location.protocol != "https:") {
+      window.location.protocol = "https";
+  }
+  </script>
+
+  <!-- Declare meta data -->
+  <title>Projects | pgeneva</title>
+  <meta name="description" content="Personal academic site for Patrick Geneva studying at the University of Delaware.">
+  <meta name="author" content="Patrick Geneva">
+
+  <!-- google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- Include our css -->
+  <link rel="stylesheet" href="../assets/css/normalize.css?v=1.0">
+  <link rel="stylesheet" href="../assets/css/bagpakk.min.css?v=1.0">
+  <link rel="stylesheet" href="../assets/css/my_style.css?v=1.1">
+
+</head>
+
+<body>
+
+<section class="container">
+  <div class="wrap">
+    <div class="col-2 first text-center">
+      <h3>Patrick Geneva</h3>
+      <p class="caption small">
+        <a href="../">home</a>
+        <br/>
+        <a href="../publications/">publications</a>
+        <br/>
+        <a href="../techreports/">tech reports</a>
+        <br/>
+        <a href="../readings/">readings</a>
+        <br/>
+        <a href="../notes/">notes</a>
+        <br/>
+        <a href="../projects/">projects</a>
+        <br/>
+        <a href="../fsae/">fsae</a>
+        <br/>
+      </p>
+    </div>
+    <div class="col-10 last">
+
+
+      <h5>vicon2gt: Vicon-IMU fusion for groundtruth trajectory generation</h5>
+      <p>This utility was created to generate groundtruth trajectories using a motion capture system (e.g. Vicon or OptiTrack) for use in evaluating visual-inertial estimation systems. Specifically we want to calculate the inertial IMU state (full 15 dof) at camera frequency rate and generate a groundtruth trajectory similar to those provided by the EurocMav datasets. Please take a look at the <a href="http://udel.edu/~pgeneva/downloads/papers/r11.pdf">report</a> for specific details and a more formal description. <a href="https://github.com/rpng/vicon2gt">Link</a> </p>
+
+
+      <h5>OpenVINS: Platform for Visual-Inertial Navigation Research</h5>
+      <p>The OpenVINS project houses some core computer vision code along with a state-of-the art filter-based visual-inertial estimator. The core filter is an Extended Kalman filter which fuses inertial information with sparse visual feature tracks. These visual feature tracks are fused leveraging the Multi-State Constraint Kalman Filter (MSCKF) sliding window formulation which allows for 3D features to update the state estimate without directly estimating the feature states in the filter. Inspired by graph-based optimization systems, the included filter has modularity allowing for convenient covariance management with a proper type-based state system. Please take a look at the feature list below for full details on what the system supports. <a href="https://github.com/rpng/open_vins">Link</a> </p>
+
+
+
+      <h5>LiDAR-Inertial 3D Plane Simulator</h5>
+      <p>This repository has a LiDAR-inertial 3D plane simulator in it that allows for custom trajectory through 3D environments to be created, and a sensor suite to be sent through it at a given rate. Does ray intersection with floorplan planes to simulate a LiDAR sensor moving through the environment. This was used in our LIPS paper to evaluate the system experimentally. I also have some quick start guides for people wanting to use it and those that want to simulate new enviroments/floorplans. <a href="https://github.com/rpng/lips">Link</a> </p>
+
+
+
+      <h5>Pointgrey Ladybug ROS Driver</h5>
+      <p>Nice small package that handles publishing of pointgrey ladybug images onto ROS. This was originally from the Autoware repository, but has been cleaned up and exposes a few more variables (framerate, exposure, gain) to the user. <a href="https://github.com/rpng/pointgrey_ladybug">Link</a> </p>
+
+
+      
+      <h5>Continuous Preintegration Source</h5>
+      <p>This is the open sourcing of our continuous preintegration method so that others can leverage it. It includes the simulator used to compare agaist discrete integration and should be pretty easy to run. We use the GTSAM optimization framework and its fixlag smoother implementation which allows for realtime optimization in a sliding window fashion. The repository includes MATLAB scripts to generate the Monte-Carlo simulation, based on trajectories and groundtruth IMU readings from the GAZEBO simulator. <a href="https://github.com/rpng/cpi">Link</a> </p>
+
+
+      
+      <h5>Reach RTK ROS Node</h5>
+      <p>This is a driver that handles publishing of NMEA messages onto the ROS framework. Unlike other drivers, this one will also publish the uncertainty of the GNSS readings alongside the lat,lon,alt measurements. This was tested on the original Reach RTK device by Emlid, which has since replaced with the Reach M+ module. <a href="https://github.com/rpng/reach_ros_node">Link</a> </p>
+
+
+      
+      <h5>Android ROS Sensor Driver</h5>
+      <p>Main motivation was getting data off of a Google Tango Yellowstone tablet into ROS for dataset recording. This android app allows for connecting to an external ROS master that one can stream images, IMU, GPS, pressure, magnetometer, and temperature data to. This was a tough project since the OpenCV compiling on android is a a bit complex and not well documented, while working with android is always a handfull. You can check out the repository here. <a href="https://github.com/rpng/android_sensors_driver">Link</a> </p>
+
+
+      
+      <h5>Image Imu Record</h5>
+      <p>This was a quick ROS node that allows for the recording of ROS image and imu messages to a flat file format to disk. This can be used to convert a ROS bag to individual images, and two data files containing the imu data and image stats. Very simple and easy to use helper node. This was created to allow for consistent offline running of both real time and non-real time algorithms. You can check out the repository here. <a href="https://github.com/rpng/img_imu_record">Link</a> </p>
+
+
+      
+      <h5>Bibtex Publication List</h5>
+      <p>This was a modification of a great original portfolio site created by <a href="https://github.com/vkaravir/bib-publication-list" target="_blank">@vkaravir</a>. It takes in a bibtex file or string and then creates a dynamic table and bar chart to visually illustrate the readings. I worked on updating, commenting, display formatting, and doing a general overhaul on the library. The large contribution was implementing a "reading group" function that allows for an additional due date field to be added to the bibtex entries and displayed in the online table. <a href="https://github.com/rpng/bib-publication-list">Link</a> </p>
+
+
+      
+      <h5>Microstrain Communication Driver</h5>
+      <p>This driver originally ran on the LCM framework. I worked on porting over the "pod" to the ROS catkin build system, along with the ROS event system. This was a really fun project to work on, as it was a lot of detective work to understand what the original author tried to code. Along with this, the amount of dependencies where minimized to allow for a more self contained package. <a href="https://github.com/rpng/microstrain_comm">Link</a> </p>
+      
+
+      
+      <h5>ORB SLAM Modification</h5>
+      <p>As part of the university's undergraduate Summer Scholars program for the summer of 2015, I worked on a modification of the ORB Slam system. This modification was a multi-map approach with a goal of minimizing the loss of data. Through the collection of multiple maps, these smaller maps could be merged into a single large map, thus preventing a large loss of data. Can see the source code here <a href="https://github.com/rpng/orb_slam">Link</a> </p>
+      
+
+      
+    </div>
+  </div>
+</section>
+
+</body>
+
+<!-- Include js libraries -->
+<script src="../assets/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</html>

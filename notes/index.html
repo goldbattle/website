@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <script type="text/javascript">
+  if (window.location.protocol != "https:") {
+      window.location.protocol = "https";
+  }
+  </script>
+
+  <!-- Declare meta data -->
+  <title>Notes | pgeneva</title>
+  <meta name="description" content="Personal academic site for Patrick Geneva studying at the University of Delaware.">
+  <meta name="author" content="Patrick Geneva">
+
+  <!-- google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- Include our css -->
+  <link rel="stylesheet" href="../assets/css/normalize.css?v=1.0">
+  <link rel="stylesheet" href="../assets/css/bagpakk.min.css?v=1.0">
+  <link rel="stylesheet" href="../assets/css/my_style.css?v=1.1">
+
+</head>
+
+<body>
+
+<section class="container">
+  <div class="wrap">
+    <div class="col-2 first text-center">
+      <h3>Patrick Geneva</h3>
+      <p class="caption small">
+        <a href="../">home</a>
+        <br/>
+        <a href="../publications/">publications</a>
+        <br/>
+        <a href="../techreports/">tech reports</a>
+        <br/>
+        <a href="../readings/">readings</a>
+        <br/>
+        <a href="../notes/">notes</a>
+        <br/>
+        <a href="../projects/">projects</a>
+        <br/>
+        <a href="../fsae/">fsae</a>
+        <br/>
+      </p>
+    </div>
+    <div class="col-10 last">
+      <!-- =========================================== -->
+      <h5>Presentations:</h5>
+      <!-- =========================================== -->
+      <p>
+      <b>Visual-Inertial Navigation Systems: An Introduction:</b>
+      This talk was presented at the <a href="https://udel.edu/~ghuang/icra21-vins-workshop/" target="_blank">ICRA21 Workshop on Visual-Inertial Navigation Systems</a> organized by my advisor Guoquan (Paul) Huang. This presentation served as an introduction to the topic of visual-inertial research. The main goal was to provide both a nice introduction to the rest of the workshop talks, but also discuss some of the key challenge areas which research has focused on. Additionally, a high level introduction into the camera and inertial measurement models along with traditional estimation methods was presented. The presentation finally closed with an overview of available open sourced systems, datasets, and evaluation techniques that a research could start using today.
+      - <a href="https://youtu.be/xlDbuw6skag?t=2350" target="_blank">Youtube Recording</a>
+      - <a href="../downloads/notes/2021_vins_tutorial_v6_split.pdf" target="_blank">PDF Slides</a>
+      </p>
+      <!-- =========================================== -->
+      <br/>
+      <h5>General Derivations:</h5>
+      <!-- =========================================== -->
+      <p>
+      <b>Kalman Filtering and MSCKF:</b>
+      Unfinished notes on Kalman filtering in 2D and 3D on the focus on clarifying the steps needed to formally derivate propagation and update equations. First discrete linear filter is explain, then nonlinear filtering. An unfinished JPL quaternion example is included. Towards the end the MSCKF filter is looked at with details on the camera cloning, measurement update, Jacobians, nullspace operation, and measurement compression. These notes where created to help my understanding, so take them with a grain of salt in their correctness.
+      - <a href="../downloads/notes/2017_msckf_notes.pdf" target="_blank">PDF Link</a>
+      </p>
+      <!-- =========================================== -->
+      <br/>
+      <h5>Research Notes and Jacobian Derivations:</h5>
+      <!-- =========================================== -->
+      <p>
+      <b>Real-Time 3D Reconstruction and 6-DoF Tracking with an Event Camera:</b>
+      Details on the ray-triangle intersection and details on how this can then be used in an update. Jacobians are derived for these barycentric coordinates and then the inverse depth update for inclusion into the state.
+      - <a href="../downloads/notes/2018_notes_kim2016eccv.pdf" target="_blank">PDF Link</a>
+      </p>
+      <!-- =========================================== -->
+      <p>
+      <b>Continuous-Time Visual-Inertial Trajectory Estimation with Event Cameras:</b>
+      Goes into detail on how the B-spline is formally created. Starts with the standard definition of a spline and then focuses on the matrix representation of a uniform B-spline, showing how the matrices in the paper are found. The initial measurement is noted, and it is noted that Jacobians for this measurement are computed numerically.
+      - <a href="../downloads/notes/2018_notes_mueffler2017arxiv.pdf" target="_blank">PDF Link</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</body>
+
+<!-- Include js libraries -->
+<script src="../assets/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</html>

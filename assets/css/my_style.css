@@ -1,0 +1,20 @@
+body {
+    font-family: "Droid Serif", "Georgia", serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#instantclick-bar {
+    background-color: #4bbd93;
+}
+
+summary {
+    display:list-item;
+    font-size: 90%;
+}
+.pub {
+    margin-top: 1.6em;
+    margin-bottom: 0px;
+}
