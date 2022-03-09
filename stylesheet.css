@@ -81,28 +81,28 @@ tr,
 p,
 a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px
+  font-size: 1.0em /*14px*/
 }
 
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 1.0em /*14px*/
 }
 
 heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 2.0em /*22px*/
 }
 
 papertitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 1.0em /*14px*/
   font-weight: 700
 }
 
 name {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 32px;
+  font-size: 3.5em /*32px*/
 }
 
 .one {
@@ -127,5 +127,38 @@ name {
 }
 
 span.highlight {
-  background-color: #ffffd0;
+  background-color: #ffff8385;
+}
+tr.highlight {
+  background-color: #ffff8354;
+}
+
+
+/* for small screens, stack our pubs */
+@media only screen and (max-width: 560px) {
+  td {
+    display: block;
+    width: 100% !important;
+    /*text-align: center;*/
+    padding: 1.0em 0.5em !important;
+    box-sizing: border-box;
+  }
+  .one {
+    margin: auto;
+  }
+  .two {
+    margin: auto;
+  }
+  #profile {
+    margin: auto;
+    max-width: 80% !important;
+  }
+}
+
+/* dark theme option for our custom css */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #191919 !important;
+        color: white;
+    }
 }
