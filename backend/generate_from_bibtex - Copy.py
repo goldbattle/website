@@ -1,0 +1,179 @@
+import os
+import sys
+import shutil
+from pybtex.database import parse_file  # pip install pybtex
+from pybtex.database import BibliographyData, Entry  # pip install pybtex
+
+
+# location of files
+path_base = os.path.dirname(os.path.abspath(__file__))
+path_bibfile = os.path.join(path_base, "my_citations.bib")
+path_output_html = os.path.join(path_base, "my_citations.html")
+path_output_bibs = os.path.join(path_base, "../downloads/bibtex/")
+
+
+# loop through the citations
+# find all the ones that have my name attached to it
+bib_data = parse_file(path_bibfile)
+my_publications = {}
+for key in bib_data.entries:
+    entry = bib_data.entries[key]
+    for author in entry.persons["author"]:
+        if "geneva" in author.last_names[0].lower():
+            my_publications[key] = entry
+
+# now separate them into different types
+bib_journals = {}
+bib_conferences = {}
+bib_workshops = {}
+bib_unknown = {}
+for key in my_publications:
+    pub = my_publications[key]
+    if pub.type == "article":
+        bib_journals[key] = pub
+    elif pub.type == "inproceedings":
+        bib_conferences[key] = pub
+    elif pub.type == "conference":
+        bib_workshops[key] = pub
+    else:
+        bib_unknown[key] = pub
+
+# debug stats to see if we processed ok...
+print("parsed total of " + str(len(my_publications)) + " publications")
+print("  - " + str(len(bib_journals)) + " journals")
+print("  - " + str(len(bib_conferences)) + " conferences")
+print("  - " + str(len(bib_workshops)) + " workshops")
+if len(bib_unknown) > 0:
+    for pub in bib_unknown:
+        print(pub)
+    sys.exit("ERROR: UNKNOWN TYPES IN BIB!!")
+
+# now we can save the bibtex to file!
+# we will delete the old folder, and create it as needed
+if os.path.exists(path_output_bibs):
+    shutil.rmtree(path_output_bibs)
+if not os.path.exists(path_output_bibs):
+    os.makedirs(path_output_bibs)
+for key in my_publications:
+    pub = my_publications[key]
+    path_file = os.path.join(path_output_bibs, key + ".bib")
+    clean_fields = {}
+    valid_fields = [
+        "title",
+        "year",
+        "booktitle",
+        "pages",
+        "organization",
+        "journal",
+        "publisher",
+        "volume",
+        "number",
+        "url",
+    ]
+    for key_field in pub.fields:
+        if key_field in valid_fields:
+            clean_fields[key_field] = pub.fields[key_field]
+    clean_pub = Entry(pub.type, fields=clean_fields, persons=pub.persons)
+    data = BibliographyData(entries=[(key, clean_pub)])
+    data.to_file(path_file, bib_format="bibtex")
+print("done updating .bib files on disk...")
+
+
+# now lets try to generate our HTML file!
+def get_html_from_bibs(pubs):
+    html = '<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">'
+    html += '<tbody>\n'
+    for key in pubs:
+        pub = pubs[key]
+        # image block
+        html += '<tr onmouseout="stop(\''+key+'\')" onmouseover="start(\''+key+'\')">\n'
+        html += '<td style="padding:20px;width:25%;vertical-align:middle">\n'
+        html += '<div class="one">\n'
+        if "img0" in pub.fields:
+            html += '<a href="downloads/images/'+pub.fields["img0"]+'">'
+            if "img1" in pub.fields:
+                html += '<div class="two" id="'+key+'">\n'
+                html += '<video  width=100% height=100% muted autoplay loop paused>\n'
+                html += '<source src="thumbnails/'+pub.fields["img1"]+'" type="video/mp4">\n'
+                html += '</video>\n'
+                html += '<script type="text/javascript">stop("'+key+'")</script>\n'
+                html += '</div>\n'
+            html += '<img src="thumbnails/'+pub.fields["img0"]+'" style="width:200px;max-height:200px">'
+        html += '</div>\n'
+        html += '</td>\n'
+        # title
+        html += '<td style="padding:20px;width:75%;vertical-align:middle">\n'
+        clean_title = pub.fields["title"].replace("{","").replace("}","")
+        if "url_paper" in pub.fields:
+            html += '<a href="'+pub.fields["url_paper"]+'">'
+            html += '<papertitle>'+clean_title+'</papertitle>'
+            html += '</a>\n'
+        else:
+            html += '<papertitle>'+clean_title+'</papertitle>'
+        html += '<br>\n'
+        # authors
+        count = 0
+        for author in pub.persons["author"]:
+            if "geneva" in author.last_names[0].lower():
+                html += '<strong>'
+                html += author.first_names[0] + " " + author.last_names[0]
+                html += '</strong>'
+            else:
+                # html += '<a href="">'
+                html += author.first_names[0] + " " + author.last_names[0]
+                # html += '</a>'
+            if count + 1 != len(pub.persons["author"]):
+                html += ', '
+            count = count + 1
+            html += '\n'
+        # conference
+        # TODO: parse the journal or conference here...
+        # links to things
+        html += '<br>\n'
+        html += '<a href="downloads/bibtex/'+key+'.bib">bibtex</a>'
+        if "url_pdf" in pub.fields:
+            html += '&nbsp/&nbsp\n<a href="'+pub.fields["url_paper"]+'">pdf</a>'
+        if "url_arxiv" in pub.fields:
+            html += '&nbsp/&nbsp\n<a href="'+pub.fields["url_arxiv"]+'">arXiv</a>'
+        if "url_report" in pub.fields:
+            html += '&nbsp/&nbsp\n<a href="'+pub.fields["url_report"]+'">technical report</a>'
+        if "url_video" in pub.fields:
+            html += '&nbsp/&nbsp\n<a href="'+pub.fields["url_video"]+'">video</a>'
+        if "url_code" in pub.fields:
+            html += '&nbsp/&nbsp\n<a href="'+pub.fields["url_code"]+'">code</a>'
+        # if "url" in pub.fields:
+        #     html += '&nbsp/&nbsp\n<a href="'+pub.fields["url"]+'">project</a>'
+        html += '\n'
+        # abstract / description
+        html += '<p></p>\n'
+        if "description" in pub.fields: 
+            html += '<p>'+pub.fields["description"]+'</p>\n'
+        html += '</td>\n'
+        html += '</tr>\n\n'
+    # finish table
+    html += '</tbody></table>\n'
+    return html
+
+
+html = '<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">'
+html += '<tbody><tr><td style="padding:20px;width:100%;vertical-align:middle"><heading>Journal</heading>\n'
+html += get_html_from_bibs(bib_journals)
+html += "</td></tr></tbody></table>\n"
+
+html += '<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">'
+html += '<tbody><tr><td style="padding:20px;width:100%;vertical-align:middle"><heading>Conference</heading>\n'
+html += get_html_from_bibs(bib_conferences)
+html += "</td></tr></tbody></table>\n"
+
+html += '<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">'
+html += '<tbody><tr><td style="padding:20px;width:100%;vertical-align:middle"><heading>Workshops</heading>\n'
+html += get_html_from_bibs(bib_workshops)
+html += "</td></tr></tbody></table>\n"
+
+
+# finally write it to file!
+text_file = open(path_output_html, "w")
+text_file.write(html)
+text_file.close()
+
+
