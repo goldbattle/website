@@ -92,15 +92,17 @@ def get_html_from_bibs(publications):
         html += '<td style="padding:20px;width:25%;vertical-align:middle">\n'
         html += '<div class="one">\n'
         if "img0" in pub.fields:
-            html += '<a href="downloads/images/'+pub.fields["img0"]+'">'
+            html += '<a href="images/'+pub.fields["img0"]+'">'
             if "img1" in pub.fields:
-                html += '<div class="two" id="'+key+'">\n'
-                html += '<video  width=100% height=100% muted autoplay loop paused>\n'
-                html += '<source src="thumbnails/'+pub.fields["img1"]+'" type="video/mp4">\n'
-                html += '</video>\n'
-                html += '<script type="text/javascript">stop("'+key+'")</script>\n'
+                html += '<div class="two" id="'+key+'_2">\n'
+                # html += '<video width=100% height=100% muted autoplay loop paused>\n'
+                # html += '<source src="images/'+pub.fields["img1"]+'" type="video/mp4">\n'
+                # html += '</video>\n'
+                html += '<img src="images/'+pub.fields["img1"]+'" type="image/webp" />\n'
                 html += '</div>\n'
-            html += '<img src="thumbnails/'+pub.fields["img0"]+'" style="width:200px;max-height:200px">'
+            html += '<img lazyload async id="'+key+'_1" src="images/'+pub.fields["img0"]+'" />'
+            if "img1" in pub.fields:
+                html += '<script type="text/javascript">stop("'+key+'")</script>\n'
         html += '</div>\n'
         html += '</td>\n'
         # title
@@ -152,6 +154,10 @@ def get_html_from_bibs(publications):
             html += ' &nbsp/&nbsp\n<a href="'+pub.fields["url_talk"]+'">talk</a>'
         if "url_code" in pub.fields:
             html += ' &nbsp/&nbsp\n<a href="'+pub.fields["url_code"]+'">code</a>'
+        if "url_slides" in pub.fields:
+            html += ' &nbsp/&nbsp\n<a href="'+pub.fields["url_slides"]+'">slides</a>'
+        if "url_poster" in pub.fields:
+            html += ' &nbsp/&nbsp\n<a href="'+pub.fields["url_poster"]+'">poster</a>'
         # if "url" in pub.fields:
         #     html += '&nbsp/&nbsp\n<a href="'+pub.fields["url"]+'">project</a>'
         html += '\n'
