@@ -60,11 +60,17 @@ name {
 .one img {
   width: 200px;
   max-height: 200px;
-  top: 50%;
+  /*top: 50%;*/
   /*transform: translateY(50%);*/
-  display: flex;
+  /*display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .two {
@@ -75,9 +81,6 @@ name {
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
   /*z-index: 1;*/
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
 }
 
 .fade {
@@ -121,4 +124,11 @@ tr.highlight {
         background-color: #191919 !important;
         color: white;
     }
+    span.highlight {
+      background-color: #ffff8354;
+    }
+    tr.highlight {
+      background-color: #ffff8312;
+    }
+    
 }
