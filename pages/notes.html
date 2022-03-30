@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Patrick Geneva - Notes</title>
+      <meta name="author" content="Patrick Geneva">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+      <link rel="icon" href="../favicon.ico">
+      <script type="text/javascript">
+         function start(id) {
+          var element1 = document.getElementById(id+"_1");
+          var element2 = document.getElementById(id+"_2");
+          if(element1 && element2) {
+            element1.style.opacity = "0";
+            element2.style.opacity = "1";
+          }
+         }
+         function stop(id) {
+          var element1 = document.getElementById(id+"_1");
+          var element2 = document.getElementById(id+"_2");
+          if(element1 && element2) {
+            element1.style.opacity = "1";
+            element2.style.opacity = "0";
+          }
+         }
+      </script>
+   </head>
+<body>
+
+
+<!-- ====================================== -->
+<!-- ====================================== -->
+<!-- ====================================== -->
+<table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr style="padding:0px">
+<td style="padding:0px">
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr style="padding:0px">
+<td style="padding:2.5%;width:63%;vertical-align:middle">
+<p style="text-align:center">
+   <name>Notes</name>
+</p>
+<p>
+This page contains a collection of various notes, slides, and derivations that I have created over the years.
+Please take them with a grain of salt in their correctness, but I hope some people will find them helpful.
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+
+
+
+<!-- ====================================== -->
+<!-- ====================================== -->
+<!-- ====================================== -->
+<tr>
+<td style="padding:20px;width:100%;vertical-align:middle">
+<h2>Covariance Intersection Delayed Feature Initialization</h2>
+<p>
+Notes on how to perform delayed state initialization when using covariance intersection.
+This is of particular interest if you have a set of measurements that are a function of two states that are related through covariance intersection (CI).
+We wish to find the correlation between the current state and the to-be-initialized state along with its marginal covariance.
+These notes also show shows some equivalence of two different initialization methodologies (very informally).
+<ul>
+  <li><a href="https://arxiv.org/pdf/2103.12770.pdf" target="_blank">Original Paper</a></li>
+  <li><a href="../downloads/notes/2022_notes_delay_init.pdf" target="_blank">PDF Link to Notes</a></li>
+</ul>
+</p>
+</td>
+</tr>
+
+
+
+<!-- ====================================== -->
+<!-- ====================================== -->
+<!-- ====================================== -->
+<tr>
+<td style="padding:20px;width:100%;vertical-align:middle">
+<h2>Visual-Inertial Navigation Systems: An Introduction</h2>
+<p>
+This talk was presented at the <a href="https://udel.edu/~ghuang/icra21-vins-workshop/" target="_blank">ICRA21 Workshop on Visual-Inertial Navigation Systems</a> organized by my advisor Guoquan (Paul) Huang.
+This presentation served as an introduction to the topic of visual-inertial research.
+The main goal was to provide both a nice introduction to the rest of the workshop talks, but also discuss some of the key challenge areas which research has focused on.
+Additionally, a high level introduction into the camera and inertial measurement models along with traditional estimation methods was presented.
+The presentation finally closed with an overview of available open sourced systems, datasets, and evaluation techniques that a research could start using today.
+<ul>
+  <li><a href="https://youtu.be/xlDbuw6skag?t=2350" target="_blank">Youtube Recording</a></li>
+  <li><a href="../downloads/notes/2021_vins_tutorial_v6_split.pdf" target="_blank">PDF Slides</a></li>
+</ul>
+</p>
+</td>
+</tr>
+
+
+<!-- ====================================== -->
+<!-- ====================================== -->
+<!-- ====================================== -->
+<tr>
+<td style="padding:20px;width:100%;vertical-align:middle">
+<h2>Kalman Filter Derivations and the MSCKF</h2>
+<p>
+Unfinished notes on Kalman filtering in 2D and 3D on the focus on clarifying the steps needed to formally derive its propagation and update equations.
+First discrete linear filter is explain, then nonlinear filtering.
+An unfinished JPL quaternion example is included. Towards the end the MSCKF filter is looked at with details on the camera cloning, measurement update, Jacobians, nullspace operation, and measurement compression.
+These notes where created to help my understanding, so take them with a grain of salt in their correctness.
+<ul>
+  <li><a href="https://www-users.cse.umn.edu/~stergios/papers/ICRA07-MSCKF.pdf" target="_blank">Original Paper</a></li>
+  <li><a href="../downloads/notes/2017_msckf_notes.pdf" target="_blank">PDF Link to Notes</a></li>
+</ul>
+</p>
+</td>
+</tr>
+
+
+<!-- ====================================== -->
+<!-- ====================================== -->
+<!-- ====================================== -->
+<tr>
+<td style="padding:20px;width:100%;vertical-align:middle">
+<h2>Real-Time 3D Reconstruction and 6-DoF Tracking with an Event Camera</h2>
+<p>
+Details on the ray-triangle intersection and details on how this can then be used in an update.
+Jacobians are derived for these barycentric coordinates and then the inverse depth update for inclusion into the state.
+<ul>
+  <li><a href="https://link.springer.com/chapter/10.1007/978-3-319-46466-4_21" target="_blank">Original Paper</a></li>
+  <li><a href="../downloads/notes/2018_notes_kim2016eccv.pdf" target="_blank">PDF Link to Notes</a></li>
+</ul>
+</p>
+</td>
+</tr>
+
+
+
+<!-- ====================================== -->
+<!-- ====================================== -->
+<!-- ====================================== -->
+<tr>
+<td style="padding:20px;width:100%;vertical-align:middle">
+<h2>Continuous-Time Visual-Inertial Trajectory Estimation with Event Cameras</h2>
+<p>
+Goes into detail on how the B-spline is formally created.
+Starts with the standard definition of a spline and then focuses on the matrix representation of a uniform B-spline, showing how the matrices in the paper are found.
+The initial measurement is noted, and it is noted that Jacobians for this measurement are computed numerically.
+<ul>
+  <li><a href="http://www.roboticsproceedings.org/rss11/p36.pdf" target="_blank">Original Paper</a></li>
+  <li><a href="../downloads/notes/2018_notes_mueffler2017arxiv.pdf" target="_blank">PDF Link to Notes</a></li>
+</ul>
+</p>
+</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+
+<!-- ====================================== -->
+<!-- ====================================== -->
+<!-- ====================================== -->
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:0px">
+<br>
+<p style="text-align:center;font-size:small;">
+   <a href="../index.html">Go Home</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

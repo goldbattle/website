@@ -143,23 +143,23 @@ def get_html_from_bibs(publications):
         html += '<br>\n'
         html += '<a href="downloads/bibtex/'+key+'.bib">bibtex</a>'
         if "url_pdf" in pub.fields:
-            html += ' &nbsp/&nbsp\n<a href="'+pub.fields["url_pdf"]+'">pdf</a>'
+            html += ' / \n<a href="'+pub.fields["url_pdf"]+'">pdf</a>'
         if "url_arxiv" in pub.fields:
-            html += ' &nbsp/&nbsp\n<a href="'+pub.fields["url_arxiv"]+'">arXiv</a>'
+            html += ' / \n<a href="'+pub.fields["url_arxiv"]+'">arXiv</a>'
         if "url_report" in pub.fields:
-            html += ' &nbsp/&nbsp\n<a href="'+pub.fields["url_report"]+'">tech report</a>'
+            html += ' / \n<a href="'+pub.fields["url_report"]+'">tech report</a>'
         if "url_video" in pub.fields:
-            html += ' &nbsp/&nbsp\n<a href="'+pub.fields["url_video"]+'">video</a>'
+            html += ' / \n<a href="'+pub.fields["url_video"]+'">video</a>'
         if "url_talk" in pub.fields:
-            html += ' &nbsp/&nbsp\n<a href="'+pub.fields["url_talk"]+'">talk</a>'
+            html += ' / \n<a href="'+pub.fields["url_talk"]+'">talk</a>'
         if "url_code" in pub.fields:
-            html += ' &nbsp/&nbsp\n<a href="'+pub.fields["url_code"]+'">code</a>'
+            html += ' / \n<a href="'+pub.fields["url_code"]+'">code</a>'
         if "url_slides" in pub.fields:
-            html += ' &nbsp/&nbsp\n<a href="'+pub.fields["url_slides"]+'">slides</a>'
+            html += ' / \n<a href="'+pub.fields["url_slides"]+'">slides</a>'
         if "url_poster" in pub.fields:
-            html += ' &nbsp/&nbsp\n<a href="'+pub.fields["url_poster"]+'">poster</a>'
+            html += ' / \n<a href="'+pub.fields["url_poster"]+'">poster</a>'
         # if "url" in pub.fields:
-        #     html += '&nbsp/&nbsp\n<a href="'+pub.fields["url"]+'">project</a>'
+        #     html += ' / \n<a href="'+pub.fields["url"]+'">project</a>'
         html += '\n'
         # abstract / description
         html += '<p></p>\n'
