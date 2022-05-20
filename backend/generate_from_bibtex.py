@@ -98,9 +98,9 @@ def get_html_from_bibs(publications):
                 # html += '<video width=100% height=100% muted autoplay loop paused>\n'
                 # html += '<source src="images/'+pub.fields["img1"]+'" type="video/mp4">\n'
                 # html += '</video>\n'
-                html += '<img src="images/'+pub.fields["img1"]+'" type="image/webp" />\n'
+                html += '<img lazyload async id="'+key+'_3" data-src="images/'+pub.fields["img1"]+'" type="image/webp" />\n'
                 html += '</div>\n'
-            html += '<img lazyload async id="'+key+'_1" src="images/'+pub.fields["img0"]+'" />'
+            html += '<img lazyload async id="'+key+'_1" src="thumbnails/'+pub.fields["img0"]+'" />'
             if "img1" in pub.fields:
                 html += '<script type="text/javascript">stop("'+key+'")</script>\n'
         html += '</div>\n'

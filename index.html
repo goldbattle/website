@@ -11,7 +11,11 @@
          function start(id) {
           var element1 = document.getElementById(id+"_1");
           var element2 = document.getElementById(id+"_2");
-          if(element1 && element2) {
+          var element3 = document.getElementById(id+"_3");
+          if(element1 && element2 && element3) {
+            if(element3.src == "") {
+               element3.src = element3.getAttribute('data-src');
+            }
             element1.style.opacity = "0";
             element2.style.opacity = "1";
           }
@@ -97,14 +101,12 @@
 <!-- ====================================== -->
 <!-- ====================================== -->
 
-
-
 <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody><tr><td style="padding:20px;width:100%;vertical-align:middle">
 <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 <tr onmouseout="stop('Geneva2022ICRA')" onmouseover="start('Geneva2022ICRA')" class="highlight">
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
-<a href="images/Geneva2022ICRA.png"><img lazyload async id="Geneva2022ICRA_1" src="images/Geneva2022ICRA.png" /></div>
+<a href="images/Geneva2022ICRA.png"><img lazyload async id="Geneva2022ICRA_1" src="thumbnails/Geneva2022ICRA.png" /></div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
 <papertitle>Map-based Visual-Inertial Localization: A Numerical Study</papertitle><br>
@@ -123,7 +125,7 @@ Guoquan Huang
 <tr onmouseout="stop('Chen2022ICRA')" onmouseover="start('Chen2022ICRA')" >
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
-<a href="images/Chen2022ICRA.png"><img lazyload async id="Chen2022ICRA_1" src="images/Chen2022ICRA.png" /></div>
+<a href="images/Chen2022ICRA.png"><img lazyload async id="Chen2022ICRA_1" src="thumbnails/Chen2022ICRA.png" /></div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
 <papertitle>FEJ2: A Consistent Visual-Inertial State Estimator Design</papertitle><br>
@@ -144,7 +146,7 @@ Guoquan Huang
 <tr onmouseout="stop('Lee2022ICRA')" onmouseover="start('Lee2022ICRA')" >
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
-<a href="images/Lee2022ICRA.png"><img lazyload async id="Lee2022ICRA_1" src="images/Lee2022ICRA.png" /></div>
+<a href="images/Lee2022ICRA.png"><img lazyload async id="Lee2022ICRA_1" src="thumbnails/Lee2022ICRA.png" /></div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
 <papertitle>Tightly-coupled GNSS-aided Visual-Inertial Localization</papertitle><br>
@@ -164,7 +166,7 @@ Guoquan Huang
 <tr onmouseout="stop('Yang2022ARXIV')" onmouseover="start('Yang2022ARXIV')" class="highlight">
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
-<a href="images/Yang2022ARXIV.png"><img lazyload async id="Yang2022ARXIV_1" src="images/Yang2022ARXIV.png" /></div>
+<a href="images/Yang2022ARXIV.png"><img lazyload async id="Yang2022ARXIV_1" src="thumbnails/Yang2022ARXIV.png" /></div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
 <a href="https://arxiv.org/abs/2201.09170"><papertitle>Online Self-Calibration for Visual-Inertial Navigation Systems: Models, Analysis and Degeneracy</papertitle></a>
@@ -187,9 +189,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Eckenhoff2021TRO.png"><div class="two" id="Eckenhoff2021TRO_2">
-<img src="images/Eckenhoff2021TRO.webp" type="image/webp" />
+<img lazyload async id="Eckenhoff2021TRO_3" data-src="images/Eckenhoff2021TRO.webp" type="image/webp" />
 </div>
-<img lazyload async id="Eckenhoff2021TRO_1" src="images/Eckenhoff2021TRO.png" /><script type="text/javascript">stop("Eckenhoff2021TRO")</script>
+<img lazyload async id="Eckenhoff2021TRO_1" src="thumbnails/Eckenhoff2021TRO.png" /><script type="text/javascript">stop("Eckenhoff2021TRO")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -212,9 +214,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Merrill2021ICRA.png"><div class="two" id="Merrill2021ICRA_2">
-<img src="images/Merrill2021ICRA.webp" type="image/webp" />
+<img lazyload async id="Merrill2021ICRA_3" data-src="images/Merrill2021ICRA.webp" type="image/webp" />
 </div>
-<img lazyload async id="Merrill2021ICRA_1" src="images/Merrill2021ICRA.png" /><script type="text/javascript">stop("Merrill2021ICRA")</script>
+<img lazyload async id="Merrill2021ICRA_1" src="thumbnails/Merrill2021ICRA.png" /><script type="text/javascript">stop("Merrill2021ICRA")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -239,9 +241,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Yang2021ICRAws.png"><div class="two" id="Yang2021ICRAws_2">
-<img src="images/Yang2021ICRAws.webp" type="image/webp" />
+<img lazyload async id="Yang2021ICRAws_3" data-src="images/Yang2021ICRAws.webp" type="image/webp" />
 </div>
-<img lazyload async id="Yang2021ICRAws_1" src="images/Yang2021ICRAws.png" /><script type="text/javascript">stop("Yang2021ICRAws")</script>
+<img lazyload async id="Yang2021ICRAws_1" src="thumbnails/Yang2021ICRAws.png" /><script type="text/javascript">stop("Yang2021ICRAws")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -268,9 +270,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Zhu2021IROS.png"><div class="two" id="Zhu2021IROS_2">
-<img src="images/Zhu2021IROS.webp" type="image/webp" />
+<img lazyload async id="Zhu2021IROS_3" data-src="images/Zhu2021IROS.webp" type="image/webp" />
 </div>
-<img lazyload async id="Zhu2021IROS_1" src="images/Zhu2021IROS.png" /><script type="text/javascript">stop("Zhu2021IROS")</script>
+<img lazyload async id="Zhu2021IROS_1" src="thumbnails/Zhu2021IROS.png" /><script type="text/javascript">stop("Zhu2021IROS")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -297,9 +299,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Geneva2020ICRA.png"><div class="two" id="Geneva2020ICRA_2">
-<img src="images/Geneva2020ICRA.webp" type="image/webp" />
+<img lazyload async id="Geneva2020ICRA_3" data-src="images/Geneva2020ICRA.webp" type="image/webp" />
 </div>
-<img lazyload async id="Geneva2020ICRA_1" src="images/Geneva2020ICRA.png" /><script type="text/javascript">stop("Geneva2020ICRA")</script>
+<img lazyload async id="Geneva2020ICRA_1" src="thumbnails/Geneva2020ICRA.png" /><script type="text/javascript">stop("Geneva2020ICRA")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -327,9 +329,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Geneva2020IROS.png"><div class="two" id="Geneva2020IROS_2">
-<img src="images/Geneva2020IROS.webp" type="image/webp" />
+<img lazyload async id="Geneva2020IROS_3" data-src="images/Geneva2020IROS.webp" type="image/webp" />
 </div>
-<img lazyload async id="Geneva2020IROS_1" src="images/Geneva2020IROS.png" /><script type="text/javascript">stop("Geneva2020IROS")</script>
+<img lazyload async id="Geneva2020IROS_1" src="thumbnails/Geneva2020IROS.png" /><script type="text/javascript">stop("Geneva2020IROS")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -356,9 +358,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Eckenhoff2020ICRA.png"><div class="two" id="Eckenhoff2020ICRA_2">
-<img src="images/Eckenhoff2020ICRA.webp" type="image/webp" />
+<img lazyload async id="Eckenhoff2020ICRA_3" data-src="images/Eckenhoff2020ICRA.webp" type="image/webp" />
 </div>
-<img lazyload async id="Eckenhoff2020ICRA_1" src="images/Eckenhoff2020ICRA.png" /><script type="text/javascript">stop("Eckenhoff2020ICRA")</script>
+<img lazyload async id="Eckenhoff2020ICRA_1" src="thumbnails/Eckenhoff2020ICRA.png" /><script type="text/javascript">stop("Eckenhoff2020ICRA")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -384,9 +386,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Lee2020ICRA.png"><div class="two" id="Lee2020ICRA_2">
-<img src="images/Lee2020ICRA.webp" type="image/webp" />
+<img lazyload async id="Lee2020ICRA_3" data-src="images/Lee2020ICRA.webp" type="image/webp" />
 </div>
-<img lazyload async id="Lee2020ICRA_1" src="images/Lee2020ICRA.png" /><script type="text/javascript">stop("Lee2020ICRA")</script>
+<img lazyload async id="Lee2020ICRA_1" src="thumbnails/Lee2020ICRA.png" /><script type="text/javascript">stop("Lee2020ICRA")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -413,9 +415,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Lee2020IROS.png"><div class="two" id="Lee2020IROS_2">
-<img src="images/Lee2020IROS.webp" type="image/webp" />
+<img lazyload async id="Lee2020IROS_3" data-src="images/Lee2020IROS.webp" type="image/webp" />
 </div>
-<img lazyload async id="Lee2020IROS_1" src="images/Lee2020IROS.png" /><script type="text/javascript">stop("Lee2020IROS")</script>
+<img lazyload async id="Lee2020IROS_1" src="thumbnails/Lee2020IROS.png" /><script type="text/javascript">stop("Lee2020IROS")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -441,7 +443,7 @@ Guoquan Huang
 <tr onmouseout="stop('Yang2020RSS')" onmouseover="start('Yang2020RSS')" >
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
-<a href="images/Yang2020RSS.png"><img lazyload async id="Yang2020RSS_1" src="images/Yang2020RSS.png" /></div>
+<a href="images/Yang2020RSS.png"><img lazyload async id="Yang2020RSS_1" src="thumbnails/Yang2020RSS.png" /></div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
 <a href="https://roboticsconference.org/2020/program/papers/26.html"><papertitle>Online IMU Intrinsic Calibration: Is It Necessary?</papertitle></a>
@@ -466,9 +468,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Zuo2020IROS.png"><div class="two" id="Zuo2020IROS_2">
-<img src="images/Zuo2020IROS.webp" type="image/webp" />
+<img lazyload async id="Zuo2020IROS_3" data-src="images/Zuo2020IROS.webp" type="image/webp" />
 </div>
-<img lazyload async id="Zuo2020IROS_1" src="images/Zuo2020IROS.png" /><script type="text/javascript">stop("Zuo2020IROS")</script>
+<img lazyload async id="Zuo2020IROS_1" src="thumbnails/Zuo2020IROS.png" /><script type="text/javascript">stop("Zuo2020IROS")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -498,9 +500,9 @@ Marc Pollefeys
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Geneva2019CVPR.png"><div class="two" id="Geneva2019CVPR_2">
-<img src="images/Geneva2019CVPR.webp" type="image/webp" />
+<img lazyload async id="Geneva2019CVPR_3" data-src="images/Geneva2019CVPR.webp" type="image/webp" />
 </div>
-<img lazyload async id="Geneva2019CVPR_1" src="images/Geneva2019CVPR.png" /><script type="text/javascript">stop("Geneva2019CVPR")</script>
+<img lazyload async id="Geneva2019CVPR_1" src="thumbnails/Geneva2019CVPR.png" /><script type="text/javascript">stop("Geneva2019CVPR")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -526,9 +528,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Geneva2019ICRA.png"><div class="two" id="Geneva2019ICRA_2">
-<img src="images/Geneva2019ICRA.webp" type="image/webp" />
+<img lazyload async id="Geneva2019ICRA_3" data-src="images/Geneva2019ICRA.webp" type="image/webp" />
 </div>
-<img lazyload async id="Geneva2019ICRA_1" src="images/Geneva2019ICRA.png" /><script type="text/javascript">stop("Geneva2019ICRA")</script>
+<img lazyload async id="Geneva2019ICRA_1" src="thumbnails/Geneva2019ICRA.png" /><script type="text/javascript">stop("Geneva2019ICRA")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -552,7 +554,7 @@ Guoquan Huang
 <tr onmouseout="stop('Geneva2019IROSws')" onmouseover="start('Geneva2019IROSws')" >
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
-<a href="images/Geneva2019IROSws.png"><img lazyload async id="Geneva2019IROSws_1" src="images/Geneva2019IROSws.png" /></div>
+<a href="images/Geneva2019IROSws.png"><img lazyload async id="Geneva2019IROSws_1" src="thumbnails/Geneva2019IROSws.png" /></div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
 <a href="https://udel.edu/~ghuang/iros19-vins-workshop/"><papertitle>OpenVINS: A Research Platform for Visual-Inertial Estimation</papertitle></a>
@@ -577,9 +579,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Eckenhoff2019ICRAa.png"><div class="two" id="Eckenhoff2019ICRAa_2">
-<img src="images/Eckenhoff2019ICRAa.webp" type="image/webp" />
+<img lazyload async id="Eckenhoff2019ICRAa_3" data-src="images/Eckenhoff2019ICRAa.webp" type="image/webp" />
 </div>
-<img lazyload async id="Eckenhoff2019ICRAa_1" src="images/Eckenhoff2019ICRAa.png" /><script type="text/javascript">stop("Eckenhoff2019ICRAa")</script>
+<img lazyload async id="Eckenhoff2019ICRAa_1" src="thumbnails/Eckenhoff2019ICRAa.png" /><script type="text/javascript">stop("Eckenhoff2019ICRAa")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -604,9 +606,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Eckenhoff2019ICRAb.png"><div class="two" id="Eckenhoff2019ICRAb_2">
-<img src="images/Eckenhoff2019ICRAb.webp" type="image/webp" />
+<img lazyload async id="Eckenhoff2019ICRAb_3" data-src="images/Eckenhoff2019ICRAb.webp" type="image/webp" />
 </div>
-<img lazyload async id="Eckenhoff2019ICRAb_1" src="images/Eckenhoff2019ICRAb.png" /><script type="text/javascript">stop("Eckenhoff2019ICRAb")</script>
+<img lazyload async id="Eckenhoff2019ICRAb_1" src="thumbnails/Eckenhoff2019ICRAb.png" /><script type="text/javascript">stop("Eckenhoff2019ICRAb")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -629,9 +631,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Eckenhoff2019IJRR.png"><div class="two" id="Eckenhoff2019IJRR_2">
-<img src="images/Eckenhoff2019IJRR.gif" type="image/webp" />
+<img lazyload async id="Eckenhoff2019IJRR_3" data-src="images/Eckenhoff2019IJRR.gif" type="image/webp" />
 </div>
-<img lazyload async id="Eckenhoff2019IJRR_1" src="images/Eckenhoff2019IJRR.png" /><script type="text/javascript">stop("Eckenhoff2019IJRR")</script>
+<img lazyload async id="Eckenhoff2019IJRR_1" src="thumbnails/Eckenhoff2019IJRR.png" /><script type="text/javascript">stop("Eckenhoff2019IJRR")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -655,9 +657,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Eckenhoff2019RAL.png"><div class="two" id="Eckenhoff2019RAL_2">
-<img src="images/Eckenhoff2019RAL.gif" type="image/webp" />
+<img lazyload async id="Eckenhoff2019RAL_3" data-src="images/Eckenhoff2019RAL.gif" type="image/webp" />
 </div>
-<img lazyload async id="Eckenhoff2019RAL_1" src="images/Eckenhoff2019RAL.png" /><script type="text/javascript">stop("Eckenhoff2019RAL")</script>
+<img lazyload async id="Eckenhoff2019RAL_1" src="thumbnails/Eckenhoff2019RAL.png" /><script type="text/javascript">stop("Eckenhoff2019RAL")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -682,9 +684,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Yang2019ICRAb.png"><div class="two" id="Yang2019ICRAb_2">
-<img src="images/Yang2019ICRAb.webp" type="image/webp" />
+<img lazyload async id="Yang2019ICRAb_3" data-src="images/Yang2019ICRAb.webp" type="image/webp" />
 </div>
-<img lazyload async id="Yang2019ICRAb_1" src="images/Yang2019ICRAb.png" /><script type="text/javascript">stop("Yang2019ICRAb")</script>
+<img lazyload async id="Yang2019ICRAb_1" src="thumbnails/Yang2019ICRAb.png" /><script type="text/javascript">stop("Yang2019ICRAb")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -711,9 +713,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Yang2019IROS.png"><div class="two" id="Yang2019IROS_2">
-<img src="images/Yang2019IROS.webp" type="image/webp" />
+<img lazyload async id="Yang2019IROS_3" data-src="images/Yang2019IROS.webp" type="image/webp" />
 </div>
-<img lazyload async id="Yang2019IROS_1" src="images/Yang2019IROS.png" /><script type="text/javascript">stop("Yang2019IROS")</script>
+<img lazyload async id="Yang2019IROS_1" src="thumbnails/Yang2019IROS.png" /><script type="text/javascript">stop("Yang2019IROS")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -737,9 +739,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Yang2019RAL.png"><div class="two" id="Yang2019RAL_2">
-<img src="images/Yang2019RAL.webp" type="image/webp" />
+<img lazyload async id="Yang2019RAL_3" data-src="images/Yang2019RAL.webp" type="image/webp" />
 </div>
-<img lazyload async id="Yang2019RAL_1" src="images/Yang2019RAL.png" /><script type="text/javascript">stop("Yang2019RAL")</script>
+<img lazyload async id="Yang2019RAL_1" src="thumbnails/Yang2019RAL.png" /><script type="text/javascript">stop("Yang2019RAL")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -763,9 +765,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Zuo2019IROS.png"><div class="two" id="Zuo2019IROS_2">
-<img src="images/Zuo2019IROS.webp" type="image/webp" />
+<img lazyload async id="Zuo2019IROS_3" data-src="images/Zuo2019IROS.webp" type="image/webp" />
 </div>
-<img lazyload async id="Zuo2019IROS_1" src="images/Zuo2019IROS.png" /><script type="text/javascript">stop("Zuo2019IROS")</script>
+<img lazyload async id="Zuo2019IROS_1" src="thumbnails/Zuo2019IROS.png" /><script type="text/javascript">stop("Zuo2019IROS")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -791,9 +793,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Zuo2019RAL.png"><div class="two" id="Zuo2019RAL_2">
-<img src="images/Zuo2019RAL.webp" type="image/webp" />
+<img lazyload async id="Zuo2019RAL_3" data-src="images/Zuo2019RAL.webp" type="image/webp" />
 </div>
-<img lazyload async id="Zuo2019RAL_1" src="images/Zuo2019RAL.png" /><script type="text/javascript">stop("Zuo2019RAL")</script>
+<img lazyload async id="Zuo2019RAL_1" src="thumbnails/Zuo2019RAL.png" /><script type="text/javascript">stop("Zuo2019RAL")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -818,9 +820,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Geneva2018ICRA.png"><div class="two" id="Geneva2018ICRA_2">
-<img src="images/Geneva2018ICRA.webp" type="image/webp" />
+<img lazyload async id="Geneva2018ICRA_3" data-src="images/Geneva2018ICRA.webp" type="image/webp" />
 </div>
-<img lazyload async id="Geneva2018ICRA_1" src="images/Geneva2018ICRA.png" /><script type="text/javascript">stop("Geneva2018ICRA")</script>
+<img lazyload async id="Geneva2018ICRA_1" src="thumbnails/Geneva2018ICRA.png" /><script type="text/javascript">stop("Geneva2018ICRA")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -845,9 +847,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Geneva2018IROS.png"><div class="two" id="Geneva2018IROS_2">
-<img src="images/Geneva2018IROS.webp" type="image/webp" />
+<img lazyload async id="Geneva2018IROS_3" data-src="images/Geneva2018IROS.webp" type="image/webp" />
 </div>
-<img lazyload async id="Geneva2018IROS_1" src="images/Geneva2018IROS.png" /><script type="text/javascript">stop("Geneva2018IROS")</script>
+<img lazyload async id="Geneva2018IROS_1" src="thumbnails/Geneva2018IROS.png" /><script type="text/javascript">stop("Geneva2018IROS")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -874,9 +876,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Geneva2017PPNIV.png"><div class="two" id="Geneva2017PPNIV_2">
-<img src="images/Geneva2017PPNIV.webp" type="image/webp" />
+<img lazyload async id="Geneva2017PPNIV_3" data-src="images/Geneva2017PPNIV.webp" type="image/webp" />
 </div>
-<img lazyload async id="Geneva2017PPNIV_1" src="images/Geneva2017PPNIV.png" /><script type="text/javascript">stop("Geneva2017PPNIV")</script>
+<img lazyload async id="Geneva2017PPNIV_1" src="thumbnails/Geneva2017PPNIV.png" /><script type="text/javascript">stop("Geneva2017PPNIV")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -899,9 +901,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Eckenhoff2017ICRA.png"><div class="two" id="Eckenhoff2017ICRA_2">
-<img src="images/Eckenhoff2017ICRA.webp" type="image/webp" />
+<img lazyload async id="Eckenhoff2017ICRA_3" data-src="images/Eckenhoff2017ICRA.webp" type="image/webp" />
 </div>
-<img lazyload async id="Eckenhoff2017ICRA_1" src="images/Eckenhoff2017ICRA.png" /><script type="text/javascript">stop("Eckenhoff2017ICRA")</script>
+<img lazyload async id="Eckenhoff2017ICRA_1" src="thumbnails/Eckenhoff2017ICRA.png" /><script type="text/javascript">stop("Eckenhoff2017ICRA")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -924,9 +926,9 @@ Guoquan Huang
 <td style="padding:20px;width:25%;vertical-align:middle">
 <div class="one">
 <a href="images/Eckenhoff2016WAFR.png"><div class="two" id="Eckenhoff2016WAFR_2">
-<img src="images/Eckenhoff2016WAFR.webp" type="image/webp" />
+<img lazyload async id="Eckenhoff2016WAFR_3" data-src="images/Eckenhoff2016WAFR.webp" type="image/webp" />
 </div>
-<img lazyload async id="Eckenhoff2016WAFR_1" src="images/Eckenhoff2016WAFR.png" /><script type="text/javascript">stop("Eckenhoff2016WAFR")</script>
+<img lazyload async id="Eckenhoff2016WAFR_1" src="thumbnails/Eckenhoff2016WAFR.png" /><script type="text/javascript">stop("Eckenhoff2016WAFR")</script>
 </div>
 </td>
 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -949,6 +951,7 @@ Guoquan Huang
 
 </tbody></table>
 </td></tr></tbody></table>
+
 
 
 
