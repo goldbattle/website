@@ -1,7 +1,8 @@
 @font-face {
   font-style: normal;
   font-family: "JetBrains Mono";
-  src: local("JetBrains Mono"), url("fonts/ttf/JetBrainsMono-Regular.ttf") format("truetype");
+  src: local("Monospace"), local("JetBrains Mono"), url("fonts/ttf/JetBrainsMono-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 a {
