@@ -185,10 +185,31 @@ def get_html_from_bibs(publications):
 # html += get_html_from_bibs(bib_workshops)
 # html += "</td></tr></tbody></table>\n"
 
+
+# https://stackoverflow.com/a/56842689
+class reversor:
+    def __init__(self, obj):
+        self.obj = obj
+
+    def __eq__(self, other):
+        return other.obj == self.obj
+
+    def __lt__(self, other):
+           return other.obj < self.obj
+def get_conf(pub):
+    if "journal" in pub.fields:
+        return pub.fields["journal"]
+    elif "booktitle" in pub.fields:
+        return pub.fields["booktitle"]
+    print(pub)
+    os.exit("invalid entry, no conference...")
+
+
+
 list_my_publications = []
 for key in my_publications:
     list_my_publications.append((key, my_publications[key]))
-list_my_publications.sort(key=lambda x: x[1].fields["year"], reverse=True)
+list_my_publications.sort(key=lambda x: (x[1].fields["year"], reversor(get_conf(x[1]))), reverse=True)
 
 
 
