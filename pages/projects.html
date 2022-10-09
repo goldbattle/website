@@ -61,6 +61,14 @@ Feel free to checkout my <a href="https://github.com/goldbattle?tab=repositories
 
 <tr>
 <td style="padding:20px;width:100%;vertical-align:middle">
+<h2>Indoor AR Table Visual-Inertial Datasets</h2>
+<p>In this dataset we collected a series small-scale indoor table AR visual-inertial datasets ranging from 1-2 minutes in length. A Intel RealSense Depth Camera D455 is equipped with groundtruth Optitrack markers and provides color monocular image at 30Hz and a 400Hz IMU inertial feed from its Bosch BMI055 IMU. Additionally, the depth projected into the color image by the realsense driver is also recorded (untested). Groundtruth for the IMU of each platform is found through the <a href="https://github.com/rpng/vicon2gt">vicon2gt</a> utility package developed by our group. <a href="https://github.com/rpng/ar_table_dataset">Github Link</a> </p>
+</td>
+</tr>
+
+   
+<tr>
+<td style="padding:20px;width:100%;vertical-align:middle">
 <h2>C++ Pytorch Pixel-wise Segnet</h2>
 <p>This project demonstrates training on the <a href="https://github.com/commaai/comma10k">comma10k</a> using Pytorch C++ "libtorch" library all without python. Goal is to provide training and prediction with Pytorch C++ "libtorch" library for others to use as a reference. The specific network is a simple U-Net which outputs a [N, classes, W, H] size tensor. To find the classification for a given pixel, the argmax of the classes responses is calculated for each and correspond to the class. <a href="https://github.com/goldbattle/segnet">Github Link</a> </p>
 </td>
