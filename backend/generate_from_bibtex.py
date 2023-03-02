@@ -98,7 +98,7 @@ def get_html_from_bibs(publications):
                 # html += '<video width=100% height=100% muted autoplay loop paused>\n'
                 # html += '<source src="images/'+pub.fields["img1"]+'" type="video/mp4">\n'
                 # html += '</video>\n'
-                html += '<img lazyload async id="'+key+'_3" data-src="images/'+pub.fields["img1"]+'" type="image/webp" />\n'
+                html += '<img lazyload async id="'+key+'_3" data-src="images_compressed/'+pub.fields["img1"]+'" type="image/webp" />\n'
                 html += '</div>\n'
             html += '<img lazyload async id="'+key+'_1" src="thumbnails/'+pub.fields["img0"]+'" />'
             if "img1" in pub.fields:
@@ -116,15 +116,22 @@ def get_html_from_bibs(publications):
             html += '<papertitle>'+clean_title+'</papertitle>'
         html += '<br>\n'
         # authors
+        equalcontrib = False
+        if 'equalcontrib' in pub.fields:
+            equalcontrib = True
         count = 0
         for author in pub.persons["author"]:
             if "geneva" in author.last_names[0].lower():
                 html += '<strong>'
                 html += author.first_names[0] + " " + author.last_names[0]
+                if equalcontrib and count < 2:
+                    html += '<sup>*</sup>'
                 html += '</strong>'
             else:
                 # html += '<a href="">'
                 html += author.first_names[0] + " " + author.last_names[0]
+                if equalcontrib and count < 2:
+                    html += '<sup>*</sup>'
                 # html += '</a>'
             if count + 1 != len(pub.persons["author"]):
                 html += ', '
