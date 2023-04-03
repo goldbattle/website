@@ -61,6 +61,13 @@ Feel free to checkout my <a href="https://github.com/goldbattle?tab=repositories
 
 <tr>
 <td style="padding:20px;width:100%;vertical-align:middle">
+<h2>Monocular Visual-Inertial Odometry with Planar Regularities</h2>
+<p>This is the open sourcing of our real-time monocular visual-inertial odometry (VIO) system which leverages environmental planes. It includes an efficient robust monocular-based plane detection algorithm which does not require additional sensing modalities such as a stereo, depth camera or neural network, and ability to perform real-time regularization of point features to environmental planes which are either maintained in the state vector as long-lived planes, or marginalized for efficiency. <a href="https://github.com/rpng/ov_plane">Github Link</a> </p>
+</td>
+</tr>
+
+<tr>
+<td style="padding:20px;width:100%;vertical-align:middle">
 <h2>Indoor AR Table Visual-Inertial Datasets</h2>
 <p>In this dataset we collected a series small-scale indoor table AR visual-inertial datasets ranging from 1-2 minutes in length. A Intel RealSense Depth Camera D455 is equipped with groundtruth Optitrack markers and provides color monocular image at 30Hz and a 400Hz IMU inertial feed from its Bosch BMI055 IMU. Additionally, the depth projected into the color image by the realsense driver is also recorded (untested). Groundtruth for the IMU of each platform is found through the <a href="https://github.com/rpng/vicon2gt">vicon2gt</a> utility package developed by our group. <a href="https://github.com/rpng/ar_table_dataset">Github Link</a> </p>
 </td>

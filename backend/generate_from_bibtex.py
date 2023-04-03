@@ -161,6 +161,8 @@ def get_html_from_bibs(publications):
             html += ' / \n<a href="'+pub.fields["url_talk"]+'">talk</a>'
         if "url_code" in pub.fields:
             html += ' / \n<a href="'+pub.fields["url_code"]+'">code</a>'
+        if "url_dataset" in pub.fields:
+            html += ' / \n<a href="'+pub.fields["url_dataset"]+'">dataset</a>'
         if "url_slides" in pub.fields:
             html += ' / \n<a href="'+pub.fields["url_slides"]+'">slides</a>'
         if "url_poster" in pub.fields:
