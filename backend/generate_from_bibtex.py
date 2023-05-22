@@ -82,7 +82,7 @@ print("done updating .bib files on disk...")
 # now lets try to generate our HTML file!
 def get_html_from_bibs(publications):
     html = '<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">'
-    html += '<tbody>\n'
+    html += '<tbody>\n\n'
     for key, pub in publications:
         # image block
         extra_stuff = ''
