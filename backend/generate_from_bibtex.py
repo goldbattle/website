@@ -89,7 +89,7 @@ def get_html_from_bibs(publications):
         if "highlight" in pub.fields:
             extra_stuff += 'class="highlight"'
         html += '<tr onmouseout="stop(\''+key+'\')" onmouseover="start(\''+key+'\')" '+extra_stuff+'>\n'
-        html += '<td style="padding:20px;width:25%;vertical-align:middle">\n'
+        html += '<td class="col1">\n'
         html += '<div class="one">\n'
         if "img0" in pub.fields:
             html += '<a href="images/'+pub.fields["img0"]+'">'
@@ -106,7 +106,7 @@ def get_html_from_bibs(publications):
         html += '</div>\n'
         html += '</td>\n'
         # title
-        html += '<td style="padding:20px;width:75%;vertical-align:middle">\n'
+        html += '<td class="col2">\n'
         clean_title = pub.fields["title"].replace("{","").replace("}","")
         if "url_paper" in pub.fields:
             html += '<a href="'+pub.fields["url_paper"]+'">'
