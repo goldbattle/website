@@ -48,9 +48,23 @@ name {
   font-size: 3.5em /*32px*/
 }
 
+
+.col1 {
+  padding:20px;
+  width:20%;
+  vertical-align:middle
+}
+
+.col2 {
+  padding:20px;
+  width:80%;
+  vertical-align:middle
+}
+
+
 .one {
-  width: 200px;
-  min-height: 200px;
+  width: 180px;
+  min-height: 180px;
   position: relative;
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
@@ -59,8 +73,8 @@ name {
 }
 
 .one img {
-  width: 200px;
-  max-height: 200px;
+  width: 180px;
+  max-height: 180px;
   /*top: 50%;*/
   /*transform: translateY(50%);*/
   /*display: flex;
@@ -75,8 +89,8 @@ name {
 }
 
 .two {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   position: absolute;
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
