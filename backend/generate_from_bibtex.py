@@ -26,6 +26,7 @@ for key in bib_data.entries:
 bib_journals = {}
 bib_conferences = {}
 bib_workshops = {}
+bib_thesis = {}
 bib_unknown = {}
 for key in my_publications:
     pub = my_publications[key]
@@ -35,6 +36,8 @@ for key in my_publications:
         bib_conferences[key] = pub
     elif pub.type == "conference":
         bib_workshops[key] = pub
+    elif pub.type == "phdthesis":
+        bib_thesis[key] = pub
     else:
         bib_unknown[key] = pub
 
@@ -43,6 +46,7 @@ print("parsed total of " + str(len(my_publications)) + " publications")
 print("  - " + str(len(bib_journals)) + " journals")
 print("  - " + str(len(bib_conferences)) + " conferences")
 print("  - " + str(len(bib_workshops)) + " workshops")
+print("  - " + str(len(bib_thesis)) + " thesis")
 if len(bib_unknown) > 0:
     for pub in bib_unknown:
         print(pub)
@@ -60,6 +64,7 @@ for key in my_publications:
     clean_fields = {}
     valid_fields = [
         "title",
+        "author",
         "year",
         "booktitle",
         "pages",
@@ -69,6 +74,7 @@ for key in my_publications:
         "volume",
         "number",
         "url",
+        "school",
     ]
     for key_field in pub.fields:
         if key_field in valid_fields:
@@ -143,9 +149,11 @@ def get_html_from_bibs(publications):
             html += '<em>'+pub.fields["journal"]+'</em>, '+pub.fields["year"]+'\n'
         elif "booktitle" in pub.fields:
             html += '<em>'+pub.fields["booktitle"]+'</em>, '+pub.fields["year"]+'\n'
+        elif "school" in pub.fields:
+            html += '<em>'+pub.fields["school"]+'</em>, '+pub.fields["year"]+'\n'
         else:
             print(pub)
-            os.exit("invalid entry, no conference...")
+            os.exit("AA invalid entry, no conference...")
         # links to things
         html += '<br>\n'
         html += '<a href="downloads/bibtex/'+key+'.bib">bibtex</a>'
@@ -217,6 +225,9 @@ def get_conf(pub):
 
 list_my_publications = []
 for key in my_publications:
+    pub = my_publications[key]
+    if pub.type == "phdthesis":
+        continue
     list_my_publications.append((key, my_publications[key]))
 list_my_publications.sort(key=lambda x: (x[1].fields["year"], reversor(get_conf(x[1]))), reverse=True)
 
@@ -224,6 +235,7 @@ list_my_publications.sort(key=lambda x: (x[1].fields["year"], reversor(get_conf(
 
 html = '<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">'
 html += '<tbody><tr><td style="padding:20px;width:100%;vertical-align:middle">\n'
+html += get_html_from_bibs(list(bib_thesis.items()))
 html += get_html_from_bibs(list_my_publications)
 html += "</td></tr></tbody></table>\n"
 
