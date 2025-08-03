@@ -1,9 +1,9 @@
-Patrick Geneva is a PhD candidate at the University of Delaware pursuing degree in Computer Science 
-in the College of Engineering. He is interested in the areas of robotics and state estimation and 
-is under the direction of Guoquan Huang in Robot Perception and Navigation Group (RPNG). His 
-primary focus is in the areas of simultaneous localization and mapping (SLAM) and visual-inertial 
-navigation systems (VINS). He received a Bachelor in Mechanical Engineering with minors in Computer 
-Science & Mathematics from the University of Delaware in 2017. He is the recipient of the 
-University Doctoral Fellowship Award (2021), NASA Delaware Space Grant (DESG) Graduate Fellowship
-(2019 and 2022), and Mary and George Nowinski Award for Excellence in Undergraduate Research Award
-(2017).
+Patrick Geneva defended his Doctor of Philosophy at the University of Delaware in Computer Science 
+in the College of Engineering in May of 2024. He is interested in the areas of robotics and state
+estimation and performed research under the direction of Guoquan Huang in Robot Perception and
+Navigation Group (RPNG). His  primary focus is in the areas of simultaneous localization and
+mapping (SLAM) and visual-inertial navigation systems (VINS). He received a Bachelor in
+Mechanical Engineering with minors in Computer Science & Mathematics from the University
+of Delaware in May of 2017. He is the recipient of the University Doctoral Fellowship Award (2021),
+NASA Delaware Space Grant (DESG) Graduate Fellowship (2019 and 2022), and Mary and George
+Nowinski Award for Excellence in Undergraduate Research Award (2017).
